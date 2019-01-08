@@ -62,13 +62,21 @@
 
         <!-- Display role.movie_id start -->
         <td>
-          <%= role.movie.title %>
+          <% if role.movie.present? %>
+            <a href="/movies/<%= role.movie.id %>">
+              <%= role.movie.title %>
+            </a>
+          <% end %>
         </td>
         <!-- Display role.movie_id end -->
 
         <!-- Display role.actor_id start -->
         <td>
-          <%= role.actor.name %>
+          <% if role.actor.present? %>
+            <a href="/actors/<%= role.actor.id %>">
+              <%= role.actor.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display role.actor_id end -->
 

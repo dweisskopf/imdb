@@ -34,7 +34,11 @@
       </dt>
       <!-- Display movie_id start -->
       <dd>
-        <%= @role.movie_id %>
+        <% if @role.movie.present? %>
+          <a href="/movies/<%= @role.movie_id %>">
+            <%= @role.movie.title %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display movie_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display actor_id start -->
       <dd>
-        <%= @role.actor_id %>
+        <% if @role.actor.present? %>
+          <a href="/actors/<%= @role.actor_id %>">
+            <%= @role.actor.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display actor_id end -->
 

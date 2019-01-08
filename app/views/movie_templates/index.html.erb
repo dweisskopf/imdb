@@ -84,7 +84,11 @@
 
         <!-- Display movie.director_id start -->
         <td>
-          <%= movie.director.name %>
+          <% if movie.director.present? %>
+            <a href="/directors/<%= movie.director.id %>">
+              <%= movie.director.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display movie.director_id end -->
 

@@ -38,7 +38,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @bookmark.user_id %>
+        <% if @bookmark.user.present? %>
+          <a href="/users/<%= @bookmark.user_id %>">
+            <%= @bookmark.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -47,7 +51,11 @@
       </dt>
       <!-- Display movie_id start -->
       <dd>
-        <%= @bookmark.movie_id %>
+        <% if @bookmark.movie.present? %>
+          <a href="/movies/<%= @bookmark.movie_id %>">
+            <%= @bookmark.movie.title %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display movie_id end -->
 
