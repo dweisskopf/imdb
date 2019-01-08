@@ -55,6 +55,22 @@ class RolesController < ApplicationController
     end
   end
 
+  def destroy_row_from_movie
+    @role = Role.find(params.fetch("id_to_remove"))
+
+    @role.destroy
+
+    redirect_to("/movies/#{@role.movie_id}", notice: "Role deleted successfully.")
+  end
+
+  def destroy_row_from_actor
+    @role = Role.find(params.fetch("id_to_remove"))
+
+    @role.destroy
+
+    redirect_to("/actors/#{@role.actor_id}", notice: "Role deleted successfully.")
+  end
+
   def destroy_row
     @role = Role.find(params.fetch("id_to_remove"))
 
