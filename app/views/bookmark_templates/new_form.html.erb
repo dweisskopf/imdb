@@ -1,0 +1,45 @@
+<h1>
+  Add a new bookmark
+</h1>
+
+
+<hr>
+
+<!-- Form bookmark start -->
+<form action="/create_bookmark" method="post">
+<!-- Form bookmark end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for movie_id start -->
+  <div class="form-group">
+    <label for="movie_id">
+      Movie
+    </label>
+
+    <!-- Input for movie_id start -->
+    <input type="text" id="movie_id" name="movie_id" class="form-control">
+    <!-- Input for movie_id end -->
+  </div>
+  <!-- Label and input for movie_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create bookmark
+  </button>
+</form>
+
+<hr>
+
+<a href="/bookmarks">
+  Go back
+</a>
