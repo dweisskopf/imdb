@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Actor resource:
+
+  # CREATE
+  get("/actors/new", { :controller => "actors", :action => "new_form" })
+  post("/create_actor", { :controller => "actors", :action => "create_row" })
+
+  # READ
+  get("/actors", { :controller => "actors", :action => "index" })
+  get("/actors/:id_to_display", { :controller => "actors", :action => "show" })
+
+  # UPDATE
+  get("/actors/:prefill_with_id/edit", { :controller => "actors", :action => "edit_form" })
+  post("/update_actor/:id_to_modify", { :controller => "actors", :action => "update_row" })
+
+  # DELETE
+  get("/delete_actor/:id_to_remove", { :controller => "actors", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Director resource:
 
   # CREATE
