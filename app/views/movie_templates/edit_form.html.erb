@@ -51,7 +51,7 @@
     </label>
 
     <!-- Input for director_id start -->
-    <input type="text" id="director_id" name="director_id" class="form-control" value="<%= @movie.director_id %>">
+    <%= select_tag(:director_id, options_from_collection_for_select(Director.all, :id, :name, @movie.director_id), :class => "form-control") %>
     <!-- Input for director_id end -->
   </div>
   <!-- Label and input for director_id end -->
