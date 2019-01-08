@@ -39,7 +39,7 @@
     </label>
 
     <!-- Input for actor_id start -->
-    <input type="text" id="actor_id" name="actor_id" class="form-control" value="<%= @role.actor_id %>">
+    <%= select_tag(:actor_id, options_from_collection_for_select(Actor.all, :id, :name, @role.actor_id), :class => "form-control") %>
     <!-- Input for actor_id end -->
   </div>
   <!-- Label and input for actor_id end -->
