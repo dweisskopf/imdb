@@ -56,7 +56,7 @@ class BookmarksController < ApplicationController
   def update_row
     @bookmark = Bookmark.find(params.fetch("id_to_modify"))
 
-    @bookmark.user_id = params.fetch("user_id")
+    
     @bookmark.movie_id = params.fetch("movie_id")
 
     if @bookmark.valid?
