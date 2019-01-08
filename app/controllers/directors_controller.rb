@@ -1,6 +1,7 @@
 class DirectorsController < ApplicationController
   def index
-    @directors = Director.page(params[:page]).per(10)
+    @q = Director.ransack(params[:q])
+    @directors = @q.result(:distinct => true).includes(:movies).page(params[:page]).per(10)
 
     render("director_templates/index.html.erb")
   end
