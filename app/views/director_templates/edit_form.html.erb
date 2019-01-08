@@ -1,0 +1,56 @@
+<h1>
+  Edit director #<%= @director.id %>
+</h1>
+
+<hr>
+
+<!-- Form director start -->
+<form action="/update_director/<%= @director.id %>" method="post">
+<!-- Form director end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @director.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for dob start -->
+  <div class="form-group">
+    <label for="dob">
+      Dob
+    </label>
+
+    <!-- Input for dob start -->
+    <input type="text" id="dob" name="dob" class="form-control" value="<%= @director.dob %>">
+    <!-- Input for dob end -->
+  </div>
+  <!-- Label and input for dob end -->
+
+  <!-- Label and input for bio start -->
+  <div class="form-group">
+    <label for="bio">
+      Bio
+    </label>
+
+    <!-- Input for bio start -->
+    <textarea id="bio" name="bio" class="form-control" rows="3"><%= @director.bio %></textarea>
+    <!-- Input for bio end -->
+  </div>
+  <!-- Label and input for bio end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update director
+  </button>
+</form>
+
+<hr>
+
+<a href="/directors">
+  Go back
+</a>

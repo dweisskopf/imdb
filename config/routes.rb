@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Director resource:
+
+  # CREATE
+  get("/directors/new", { :controller => "directors", :action => "new_form" })
+  post("/create_director", { :controller => "directors", :action => "create_row" })
+
+  # READ
+  get("/directors", { :controller => "directors", :action => "index" })
+  get("/directors/:id_to_display", { :controller => "directors", :action => "show" })
+
+  # UPDATE
+  get("/directors/:prefill_with_id/edit", { :controller => "directors", :action => "edit_form" })
+  post("/update_director/:id_to_modify", { :controller => "directors", :action => "update_row" })
+
+  # DELETE
+  get("/delete_director/:id_to_remove", { :controller => "directors", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Movie resource:
 
   # CREATE
