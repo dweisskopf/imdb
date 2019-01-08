@@ -6,6 +6,7 @@ class ActorsController < ApplicationController
   end
 
   def show
+    @role = Role.new
     @actor = Actor.find(params.fetch("id_to_display"))
 
     render("actor_templates/show.html.erb")

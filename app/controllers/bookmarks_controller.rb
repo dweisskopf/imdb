@@ -32,6 +32,21 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def create_row_from_movie
+    @bookmark = Bookmark.new
+
+    @bookmark.user_id = params.fetch("user_id")
+    @bookmark.movie_id = params.fetch("movie_id")
+
+    if @bookmark.valid?
+      @bookmark.save
+
+      redirect_to("/movies/#{@bookmark.movie_id}", notice: "Bookmark created successfully.")
+    else
+      render("bookmark_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @bookmark = Bookmark.find(params.fetch("prefill_with_id"))
 

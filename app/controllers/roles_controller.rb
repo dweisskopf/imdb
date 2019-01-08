@@ -33,6 +33,38 @@ class RolesController < ApplicationController
     end
   end
 
+  def create_row_from_movie
+    @role = Role.new
+
+    @role.movie_id = params.fetch("movie_id")
+    @role.actor_id = params.fetch("actor_id")
+    @role.charactername = params.fetch("charactername")
+
+    if @role.valid?
+      @role.save
+
+      redirect_to("/movies/#{@role.movie_id}", notice: "Role created successfully.")
+    else
+      render("role_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_actor
+    @role = Role.new
+
+    @role.movie_id = params.fetch("movie_id")
+    @role.actor_id = params.fetch("actor_id")
+    @role.charactername = params.fetch("charactername")
+
+    if @role.valid?
+      @role.save
+
+      redirect_to("/actors/#{@role.actor_id}", notice: "Role created successfully.")
+    else
+      render("role_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @role = Role.find(params.fetch("prefill_with_id"))
 

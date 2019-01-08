@@ -1,0 +1,25 @@
+<!-- Form bookmark start -->
+<form action="/create_bookmark_from_movie" method="post">
+<!-- Form bookmark end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @bookmark.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for movie_id start -->
+  <!-- Input for movie_id start -->
+  <input type="hidden" name="movie_id" value="<%= @movie.id %>">
+  <!-- Input for movie_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create bookmark
+  </button>
+</form>
