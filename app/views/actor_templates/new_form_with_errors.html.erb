@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @actor.present? %>
   <% if @actor.errors.any? %>
     <% @actor.errors.full_messages.each do |message| %>
@@ -16,45 +15,31 @@
 
 <hr>
 
-<!-- Form actor start -->
 <form action="/create_actor" method="post">
-<!-- Form actor end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @actor.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for bio start -->
   <div class="form-group">
     <label for="bio">
       Bio
     </label>
 
-    <!-- Input for bio start -->
     <input type="text" id="bio" name="bio" class="form-control" value="<%= @actor.bio %>">
-    <!-- Input for bio end -->
   </div>
-  <!-- Label and input for bio end -->
 
-  <!-- Label and input for dob start -->
   <div class="form-group">
     <label for="dob">
       Dob
     </label>
 
-    <!-- Input for dob start -->
     <input type="text" id="dob" name="dob" class="form-control" value="<%= @actor.dob %>">
-    <!-- Input for dob end -->
   </div>
-  <!-- Label and input for dob end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create actor

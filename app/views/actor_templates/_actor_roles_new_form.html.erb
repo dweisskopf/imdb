@@ -1,35 +1,22 @@
-<!-- Form role start -->
 <form action="/create_role_from_actor" method="post">
-<!-- Form role end -->
 
-  <!-- Label and input for movie_id start -->
   <div class="form-group">
     <label for="movie_id">
       Movie
     </label>
 
-    <!-- Input for movie_id start -->
     <%= select_tag(:movie_id, options_from_collection_for_select(Movie.all, :id, :title, @role.movie_id), :class => "form-control") %>
-    <!-- Input for movie_id end -->
   </div>
-  <!-- Label and input for movie_id end -->
 
-  <!-- Label and input for actor_id start -->
-  <!-- Input for actor_id start -->
   <input type="hidden" name="actor_id" value="<%= @actor.id %>">
-  <!-- Input for actor_id end -->
 
-  <!-- Label and input for charactername start -->
   <div class="form-group">
     <label for="charactername">
       Charactername
     </label>
 
-    <!-- Input for charactername start -->
     <input type="text" id="charactername" name="charactername" class="form-control" value="<%= @role.charactername %>">
-    <!-- Input for charactername end -->
   </div>
-  <!-- Label and input for charactername end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create role

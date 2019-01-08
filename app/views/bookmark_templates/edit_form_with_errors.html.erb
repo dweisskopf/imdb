@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @bookmark.errors.any? %>
   <% @bookmark.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,24 +12,16 @@
 
 <hr>
 
-<!-- Form bookmark start -->
 <form action="/update_bookmark/<%= @bookmark.id %>" method="post">
-<!-- Form bookmark end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for movie_id start -->
   <div class="form-group">
     <label for="movie_id">
       Movie
     </label>
 
-    <!-- Input for movie_id start -->
     <%= select_tag(:movie_id, options_from_collection_for_select(Movie.all, :id, :title, @bookmark.movie_id), :class => "form-control") %>
-    <!-- Input for movie_id end -->
   </div>
-  <!-- Label and input for movie_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update bookmark
