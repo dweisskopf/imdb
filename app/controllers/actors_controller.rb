@@ -1,6 +1,6 @@
 class ActorsController < ApplicationController
   def index
-    @actors = Actor.all
+    @actors = Actor.page(params[:page]).per(10)
 
     render("actor_templates/index.html.erb")
   end

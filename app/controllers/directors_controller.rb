@@ -1,6 +1,6 @@
 class DirectorsController < ApplicationController
   def index
-    @directors = Director.all
+    @directors = Director.page(params[:page]).per(10)
 
     render("director_templates/index.html.erb")
   end
